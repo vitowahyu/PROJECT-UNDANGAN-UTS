@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>The Wedding of BHUMI &amp; AURORA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400&family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body class="locked">
+
+<!--musik latar belakang-->
+<audio id ="musiklatar" autoplay loop hidden>
+    <source src="asset/audio/musik.mp3" type="audio/mpeg">
+    Browser Anda tidak mendukung elemen audio.
+</audio>
+
+<!--LAPISAN ASSET KELOPAK BUNGA-->
+<div id ="kelopakbunga" aria-hidden="true"></div>
+<div id ="garisprogres" aria-hidden="true"></div>
+
+<!--sampul depan-->
+<div id="sampuldepan" class="on-dark">
+    <div class="door l">
+        <div class="pattern"></div>
+        <div class="corner tl">
+            <img src="asset/image/ornamen/sudut.png" alt="Ornamen Kiri Atas" width="120" height="120">
+        </div>
+        <div class="corner bl">
+            <img src="asset/image/ornamen/sudut.png" alt="Ornamen Kiri Bawah" width="120" height="120">
+        </div>
+    </div>
+    <div class="door r">
+        <div class="pattern"></div>
+        <div class="corner tr">
+            <img src="asset/image/ornamen/sudut.png" alt="Ornamen Kanan Atas" width="120" height="120">
+        </div>
+        <div class="corner br">
+            <img src="asset/image/ornamen/sudut.png" alt="Ornamen Kanan Bawah" width="120" height="120">
+        </div>
+    </div>
+
+<!--asset bunga sampul-->
+    <div class="blossom bl-utama"><img src= "asset/image/ornamen/bunga-mekar.png" alt=""></div>
+    <div class="blossom bl-1"><img src="asset/image/ornamen/bunga-mekar.png" alt=""></div>
+    <div class="blossom bl-2"><img src="asset/image/ornamen/bunga-mekar.png" alt=""></div>
+    <div class="blossom bl-3"><img src="asset/image/ornamen/bunga-mekar.png" alt=""></div>
+    <div class="blossom bl-4"><img src="asset/image/ornamen/bunga-mekar.png" alt=""></div>
+    <div class="blossom bl-5"><img src="asset/image/ornamen/bunga-mekar.png" alt=""></div>
+    <div class="blossom bl-6"><img src="asset/image/ornamen/bunga-mekar.png" alt=""></div>
+
+    <div class="cover-inner">
+        <p class="eyebrow">The Wedding Of</p>
+        <h1 class="script names">Bhumi &amp; Aurora</h1>
+        <img src="asset/image/ornamen/pemisah.png" alt="Garis Pembatas" class="divider">
+        <p class="cover-msg">Dengan segala kerendahan hati, kami mengundang Anda untuk berbagi kebahagiaan di hari istimewa kami.</p>
+        <p class="mb-1 small">Kepada Yth:<br>Bapak , Ibu , Saudara , serta teman- teman </p>
+        <p class="guest" id="namatamu">Tamu Undangan</p>
+        <button type="button" id="tombolbuka" class="btn btn-gold rounded-pill px-4 py-2">Buka Undangan</button>
+    </div>
+</div>
+
+<!--halaman utama -->
+<section id = "halamanutama" class="on-dark hero">
+    <div class="pattern"></div>
+    <div class="corner tl">
+        <img src="asset/image/ornamen/sudut.png" alt="Ornamen Kiri Atas" width="120" height="120">
+    </div>
+    <div class="corner tr">
+        <img src="asset/image/ornamen/sudut.png" alt="Ornamen Kanan Atas" width="120" height="120">
+    </div>
+    <div class="corner bl">
+        <img src="asset/image/ornamen/sudut.png" alt="Ornamen Kiri Bawah" width="120" height="120">
+    </div>
+    <div class="corner br">
+        <img src="asset/image/ornamen/sudut.png" alt="Ornamen Kanan Bawah" width="120" height="120">
+    </div>
+
+    <div class="container text-center reveal-hero" id="isihalamanutama">
+        <p class="eyebrow">Kami Mengundang Anda ke Pernikahan</p>
+        <h1 class="script names">Bhumi &amp; Aurora</h1>
+        <p class="serif fs-3 mb-2">Sabtu, 12 Desember 2026</p>
+        <div class="row g-2 justify-content-center my-4" id="hitunganmundur">
+            <div class="col-auto"><div class="count-box"><b id="tekshari">0</b><span>Hari</span></div></div>
+            <div class="col-auto"><div class="count-box"><b id="teksjam">0</b><span>Jam</span></div></div>
+            <div class="col-auto"><div class="count-box"><b id="teksmenit">0</b><span>Menit</span></div></div>
+            <div class="col-auto"><div class="count-box"><b id="teksdetik">0</b><span>Detik</span></div></div>
+        </div>
+        <a id="tombolkalender" class="btn btn-gold rounded-pill px-4" href="#" target="_blank" rel="noopener">Simpan di Kalender</a>
+    </div>
+</section>
+
+<!--AYAT-->
+<section id="ayat" class="sec bg-soft">
+    <div class="container text-center">
+        <div class="row justify-content-center">
+            <div class="col-lg-7 reveal">
+                <p class="eyebrow"><cite>QS. Ar-Rum Ayat 21</cite></p>
+                <p class="ayat">وَمِنْ اٰيٰتِهٖٓ اَنْ خَلَقَ لَكُمْ مِّنْ اَنْفُسِكُمْ اَزْوَاجًا لِّتَسْكُنُوْٓا اِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَّوَدَّةً وَّرَحْمَةً</p>
+                <p class="text-muted-w">Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang.</p>
+                <img src="asset/image/ornamen/pemisah.png" alt="Garis Pembatas" class="divider">
+                <h3>Assalamu’alaikum Warahmatullahi Wabarakatuh</h3>
+                <p class="text-muted-w">Maha Suci Allah yang telah menciptakan makhluk-Nya berpasang-pasangan. Ya Allah, semoga ridho-Mu tercurah mengiringi pernikahan kami.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--MEMPELAI-->
+<section id="mempelai" class="sec">
+    <div class="container text-center reveal">
+        <p class="eyebrow">Mempelai</p>
+        <h2 class="title">Dua Hati Menjadi 1 tujuan</h2>
+        <div class="row justify-content-center align-items-center g-4 mt-2">
+            <div class="col-md-5">
+                <img src="asset/image/foto pribadi/cowok 2.jpg" alt="Foto Bhumi Dyaksa Putra Perkasa" class="avatar-img mb-3" loading="lazy">
+                <h3 class="script person-name">Bhumi Dyaksa Putra Perkasa</h3>
+                <p class="text-muted-w">Putra Kedua dari<br>Bapak Angga Abraham Perkasa &amp; Ibu Widya Sintha</p>
+                <a class="ig" href="#">@bhumi.perkasa</a>
+            </div>
+            <div class="col-md-2">
+                <div class="script amp float">&amp;</div>
+            </div>
+            <div class="col-md-5">
+                <img src="asset/image/foto pribadi/wanita 2.jpg" alt="Foto Putri Aurora Bintang Maharini" class="avatar-img mb-3" loading="lazy">
+                <h3 class="script person-name">Putri Aurora Bintang Maharini</h3>
+                <p class="text-muted-w">Putri Pertama dari<br>Bapak Tjoe Hartono &amp; Ibu Alya Wulandari</p>
+                <a class="ig" href="#">@aurora.maharini</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--rangkaian acara-->
+<section id = "rangkaianacara" class="sec bg-soft">
+    <div class = "container text-center reveal">
+        <p class="eyebrow">SAVE THE DATE</p>
+        <h2 class="title"> RANGKAIAN ACARA</h2>
+        <div class= "row g-4 justify-content-center mt-1" id="daftaracara"></div>
+    </div>
+</section>
+
+<!--kisah calon pengantin-->
+<section id="kisahcinta" class="sec">
+    <div class="container">
+        <div class = "row justify-content-center">
+                <div class="text-center">
+                    <p class="eyebrow">LOVE STORY</p>
+                    <h2 class="title">PERJALANAN KAMI</h2>
+                </div>
+            <div class="timeline mt-4">
+                <div class="tl">
+                    <small>06 NOVEMBER 2022</small>
+                        <h3>Pertemuan yang Tak Disangka</h3>
+                        <p class="text-muted-w">Cinta pertama terbentuk dari sosial media , lalu kita melakukan tatap muka dan disitulah cinta mulai tumbuh hingga saat ini.</p>
+                </div>
+                <div class="tl">
+                    <small>08 NOVEMBER 2022</small>
+                    <h3>Ikatan Awal</h3>
+                    <p class="text-muted-w">Hanya dalam waktu 2 bulan setelah pandangan pertama, kami berani mengikat janji untuk memulai perjalanan bersama.</p>
+                </div>
+                <div class="tl">
+                        <small>12 DESEMBER 2026</small>
+                        <h3>Ikatan Abadi</h3>
+                        <p class="text-muted-w">Dengan restu keluarga dan doa yang mengiringi , kami siap menyempurnakan setengah agama dalam ikatan pernikahan yang suci.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+<!--GALERI-->
+<section id="galeri" class="sec bg-soft">
+    <div class="container text-center">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 reveal">
+                <p class="eyebrow">GALLERY</p>
+                <h2 class="title">Momen Bahagia</h2>
+                <div class="row g-2 mt-2">
+                    <div class="col-6">
+                        <div class="kotak-foto lanskap"><img src="asset/image/pasangan/pasangan 2.jpg" alt="Foto Prewedding 1" loading="lazy"></div></div>
+                    <div class="col-6">
+                        <div class="kotak-foto lanskap"><img src="asset/image/pasangan/pasangan 4.jpg" alt="Foto Prewedding 2" loading="lazy"></div></div>
+                    <div class="col-4">
+                        <div class="kotak-foto potret"><img src="asset/image/pasangan/pasangan 1.jpg" alt="Foto Prewedding 3" loading="lazy"></div></div>
+                    <div class="col-4">
+                        <div class="kotak-foto potret"><img src="asset/image/pasangan/pasangan 3.jpg" alt="Foto Prewedding 4" loading="lazy"></div></div>
+                    <div class="col-4">
+                        <div class="kotak-foto potret"><img src="asset/image/pasangan/pasangan 5.jpg" alt="Foto Prewedding 5" loading="lazy"></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- HADIAH -->
+<section id="hadiah" class="sec">
+    <div class="container text-center reveal">
+        <p class="eyebrow">WEDDING GIFT</p>
+        <h2 class="title">TANDA KASIH</h2>
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <p class="text-muted-w">Doa restu Kalian sangat berarti untuk kita.</p>
+            </div>
+        </div>
+        <div class="row g-3 justify-content-center mt-1" id="daftarhadiah"></div>
+    </div>
+</section>
+
+<!--KONFIRMASI KEHADIRAN-->
+<section id="konfirmasikehadiran" class="sec bg-soft">
+    <div class="container text-center ">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 reveal">
+                <p class="eyebrow">RSVP</p>
+                <h2 class="title">Ucapan &amp; Doa</h2>
+                <p class="text-muted-w">Berikan ucapan, harapan, dan doa untuk kedua mempelai.</p>
+                <div class="frame text-start">
+                    <form id="formulirrsvp" action="#" method="post" autocomplete="off">
+                        <label class="form-label" for="inputnama">Nama</label>
+                        <input id="inputnama" name="nama_lengkap" type="text" class="form-control" placeholder="Masukkan nama" required minlength="2" maxlength="60">
+                        <div class="row g-3 mt-0">
+                            <div class="col-sm-7">
+                                <label class="form-label" for="inputkehadiran">Konfirmasi Kehadiran</label>
+                                <select id="inputkehadiran" name="status_kehadiran" class="form-select" required>
+                                    <option value="">Pilih…</option>
+                                    <option value="Hadir">Hadir</option>
+                                    <option value="Tidak Hadir">Tidak Hadir</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-5">
+                                <label class="form-label" for="inputjumlahtamu">Jumlah Tamu</label>
+                                <select id="inputjumlahtamu" name="jumlah_tamu" class="form-select">
+                                    <option value="1">1 orang</option>
+                                    <option value="2">2 orang</option>
+                                    <option value="3">3 orang</option>
+                                    <option value="4">4 orang</option>
+                                    <option value="5">5 orang</option>
+                                </select>
+                            </div>
+                        </div>
+                        <label class="form-label mt-3" for="inputpesan">Ucapan &amp; Doa</label>
+                        <textarea id="inputpesan" name="pesan_doa" class="form-control" rows="3" placeholder="Tulis pesan Anda di sini" required minlength="2" maxlength="400"></textarea>
+                        <div class="text-center mt-4">
+                            <button class="btn btn-wed rounded-pill px-4" type="submit">Kirim Ucapan</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="wishes mt-4 text-start" id="daftarucapan"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--footer-->
+<footer class="on-dark">
+    <div class="container text-center">
+        <img src="asset/image/ornamen/kupu-terbang.gif" alt="Ornamen Kupu Kupu" width="60" class="mb-3">
+        <p class="eyebrow">TURUT MENGUNDANG</p>
+        <p class="mb-4">Keluarga Bapak Angga Abraham Perkasa &amp; Ibu Widya Sintha<br>Keluarga Bapak Tjoe Hartono &amp; Ibu Alya Wulandari</p>
+        <p>Atas kehadiran dan doa restu Bapak&Ibu serta suadara dan teman-teman sekalian, kami mengucapkan terima kasih.</p>
+        <p><b>Wassalamu’alaikum Wr. Wb.</b></p>
+        <h2 class="script names mt-4">Bhumi &amp; Aurora</h2>
+    </div>
+</footer>
+
+<!-- NAVIGASI BAWAH -->
+<nav id="navigasibawah" class="nav bottom-nav rounded-pill">
+    <a class="nav-link" href="#halamanutama">Home</a>
+    <a class="nav-link" href="#mempelai">Mempelai</a>
+    <a class="nav-link" href="#rangkaianacara">Acara</a>
+    <a class="nav-link" href="#hadiah">Gift</a>
+    <a class="nav-link" href="#konfirmasikehadiran">RSVP</a>
+</nav>
+
+<!-- NOTIFIKASI -->
+<div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3">
+    <div id="notifikasitoast" class="toast text-bg-dark border-0" role="status" aria-live="polite">
+        <div class="toast-body" id="pesantoast"></div>
+    </div>
+</div>
+
+<!-- Pemanggilan JS Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmxc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
